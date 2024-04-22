@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderlust</title>
+<style>
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ff7f0e;
+    animation: changeBg 10s infinite;
+  }
+  .container {
+    text-align: center;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+    color: #fff; 
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    animation: slideIn 1s ease-out;
+    color: #fff; 
+  }
+  @keyframes changeBg {
+    0% { background-color: #ff7f0e; }
+    25% { background-color: #2ca02c; }
+    50% { background-color: #1f77b4; }
+    75% { background-color: #d62728; }
+    100% { background-color: #9467bd; }
+  }
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    animation: pulse 1s infinite alternate;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome to our Website</h1>
+  <p>Discover amazing hotel and services </p>
+  <a href="/listings" class="btn">Get Started</a>
+</div>
+</body>
+</html>

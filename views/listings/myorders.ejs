@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate") %> 
+<body>
+    <div class="main-cart">
+    <h3>All listings Booked cart</h3>
+    <% sum = 0 %>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1   row-cols-xs-1 " >
+        <% for(let listing of order){ %>
+
+            <div class="card col listing-card" >
+              <img src="<%= listing.image %>" class="card-img-top" alt="listing" style="height : 20rem">
+                <div class="card-body">
+                  <p class="card-text"> <b><%= listing.title %></b>   <br/>
+                    <b><%= listing.location %> </b> 
+                    <b> <%= listing.country %> </b><br/>
+                    <b>&#8377;<%= listing.price.toLocaleString("en-IN") %> /night</b><br/>
+                    <b>Room boooked :- <%= Math.floor(Math.random()*5) + 100   %></b><br/>
+                    <b>Payment mode :- Counter(Basement (Cash/Online)) </b>
+                  </p>
+                  
+                </div>
+              </div>
+              <% sum += 1 %>
+              
+        
+              <% } %>
+              <% if(sum == 0){ %>
+                <h1 style="color: red;">Book for the best experience</h1>
+           <% } %>
+    </div>
+   <% if(sum >= 1){ %>
+        <form action="/listings/order/delete?_method=DELETE" method="POST">
+            <button class="btn btn-danger"   >Cancel Order</button>
+          </form>
+    <%} %>
+  
+   
+</div>
+
+</body>
+

@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate") %> 
+<body>
+    <div class="mb-3 divide">
+        <h5>Update Username!</h5>
+        <form method="POST" action="/listings/info/edit/password/<%= currUser._id %>?_method=PUT"> 
+
+        <label for="password" class="form-label" novalidate>Enter Previous Password to change : </label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required /><br/>
+
+        <label for="pass" class="form-label" novalidate>Enter New Password : </label>
+        <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter new password" required><br/>
+
+        <label for="pass1" class="form-label" novalidate>Confirm New Password </label>
+        <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Enter new password" required><br/>
+      
+        <button  class="btn btn-success">Make changes</button>
+    </form>
+    </div>
+</body>
